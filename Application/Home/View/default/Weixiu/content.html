@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>内容页</title>
+    <link rel="stylesheet" href="__CSS__/content.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--<script src="./js/TouchSlide.1.1.js"></script>-->
+    <!--<script src="./js/swiper.js"></script>-->
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+
+<div class="all">
+    <div class="nav">
+        <a href="javascript :;" onClick="javascript :history.back(-1);">
+        <img src="__IMG__/list_left.png" alt="">
+            </a>
+        止夕ZENVL
+    </div>
+    <div class="content_pic">
+        <ul class="content_pic_ul">
+            <li><img src="__IMG__/11.png" alt=""></li>
+            <li><img src="__IMG__/12.png" alt=""></li>
+            <li><img src="__IMG__/13.png" alt=""></li>
+            <li><img src="__IMG__/14.png" alt=""></li>
+            <li><img src="__IMG__/15.png" alt=""></li>
+            <li><img src="__IMG__/16.png" alt=""></li>
+            <li><img src="__IMG__/17.png" alt=""></li>
+            <li><img src="__IMG__/18.png" alt=""></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="content_instr">
+        <div class="content_instr_top">
+            <img src="__IMG__/touxiang_01.jpg" alt="" class="img1">
+            <span class="span1">止夕ZENVL</span>
+        </div>
+        <div class="content_instr_center">lofree本意为：Love＋free 。诞生于2012年的洛斐，以纯粹、极简和自然的理念，引领品质生活时代。拍LOFREE产品美照艾特我，被官博君相中就送礼！键盘！键帽！音箱！包包！被官博君相中就送礼！键</div>
+        <div class="content_instr_btm">展开更多</div>
+    </div>
+    <div class="index_line"></div>
+    <div class="index_infor">
+        <div class="index_infor_left">
+            <img src="__IMG__/horse.jpg" alt="">
+        </div>
+        <div class="index_infor_right">
+            <div class="index_infor_right_top">
+                <img src="__IMG__/touxiang_01.jpg" alt="">
+                <span class="span1">止夕ZENVL</span>
+            </div>
+                <p class="p1">识别图中的二维码图案，加我微信</p>
+                <p class="p2">个人标签</p>
+                <div class="clear"></div>
+                <ul class="index_info_msk">
+                    <li>护肤彩妆</li>
+                    <li>美甲</li>
+                    <li>时尚</li>
+                </ul>
+        </div>
+    </div>
+    <div class="index_line"></div>
+    <div class="footer">
+        <p class="p4">最新动态</p>
+        <volist name="abc" id="vo">
+            <div class="content_footer">
+                <a href="index.php?s=/Home/weixiu/olist">
+                    <div class="content_footer_info">
+                        <div class="content_footer_img">
+                            <img src="{$vo.sec_head}" alt="">
+                        </div>
+                        <div class="content_footer_right">
+                            <p class="p5">{$vo.sec_title}</p>
+                            <div class="content_footer_odiv">
+                                {$vo.sec_intro}
+                            </div>
+                            <ul class="content_footer_ul">
+                                <li><img src="{$vo.storeimg1}" alt=""></li>
+                                <li><img src="{$vo.storeimg2}" alt=""></li>
+                                <li><img src="{$vo.storeimg3}" alt=""></li>
+                            </ul>
+                            <p class="p6">2个小时</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </volist>
+    </div>
+    <div class="index_line"></div>
+    <div class="content_wb">
+        <div class="content_wb_left">
+            <img src="__IMG__/content_hotel.png" alt="" class="img1">
+            <span class="span1">微秀</span>
+            <img src="__IMG__/fenxiang.png" alt="" class="img2">
+            <span class="span1">分享</span>
+        </div>
+        <div class="content_wb_right">聊一聊</div>
+    </div>
+
+
+</div>
+</body>
+</html>

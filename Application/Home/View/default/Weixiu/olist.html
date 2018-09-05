@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>列表页</title>
+    <link rel="stylesheet" href="__CSS__/list.css">
+    <!--<link rel="stylesheet" href="./css/swiper.css">-->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--<script src="./js/TouchSlide.1.1.js"></script>-->
+    <!--<script src="./js/swiper.js"></script>-->
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+
+<div class="all">
+    <div class="nav">
+        <a href="javascript :;" onClick="javascript :history.back(-1);">
+        <img src="__IMG__/list_left.png" alt="">
+            </a>
+        微秀
+    </div>
+    <div class="mmpp">
+        <ul class="list_ul">
+            <li>美妆</li>
+            <li>美食</li>
+            <li>生活</li>
+            <li>旅行</li>
+            <li>交友</li>
+            <li>时尚</li>
+        </ul>
+    </div>
+    <div class="list_xn">
+        <ul class="list_oul">
+            <li>全部</li>
+            <li>护肤彩妆</li>
+            <li>个人护理</li>
+            <li>美容美发</li>
+            <li>美甲</li>
+        </ul>
+    </div>
+
+
+    <div class="index_line">
+    </div>
+    <volist name="abc" id="vo">
+            <div class="index_instr">
+                <div class="index_instr_tp">
+                    <img src="{$vo.three_head}" alt="">
+                    <span class="span3">{$vo.three_title}</span>
+                </div>
+                <div class="index_instr_btm">
+                   {$vo.three_intro}
+                </div>
+            </div>
+            <ul class="index_list_yf">
+                <li>
+                    <img src="{$vo.three_storeimg1}" alt="">
+                </li>
+                <li>
+                    <img src="{$vo.three_storeimg2}" alt="">
+                </li>
+                <li>
+                    <img src="{$vo.three_storeimg3}" alt="">
+                </li>
+                <li>
+                    <img src="{$vo.three_storeimg4}" alt="">
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="list_instr">
+                <div class="list_instr_p1 list_instr_com">护肤彩妆</div>
+                <div class="list_instr_p2 list_instr_com">美甲</div>
+                <div class="list_instr_p3 list_instr_com">时尚</div>
+            </div>
+    </volist>
+    <div class="index_line"></div>
+
+</div>
+</body>
+</html>

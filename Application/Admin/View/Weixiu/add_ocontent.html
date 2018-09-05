@@ -1,0 +1,203 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <style>
+        .radio{
+            width:100px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+    <script charset="utf-8" src="Public/static/kindeditor_new/kindeditor-all.js"></script>
+    <script charset="utf-8" src="Public/static/kindeditor_new/lang/zh-CN.js"></script>
+
+    <script>
+        KindEditor.ready(function(K) {
+            window.editor = K.create('#editor_id');
+        });
+    </script>
+
+    <div class="main-title">
+        <h2>添加二级页面信息</h2>
+    </div>
+    <form action="{:U(add_ocontent)}" method="post" class="form-horizontal"  >
+
+        <div class="form-item">
+            <label class="item-label">标题</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="sec_title" value="">
+            </div>
+        </div>
+
+        <!--这里是上传图片的div-->
+        <!--<div class="picmsg">-->
+            <!--<div>上传图片</div>-->
+            <!--<input type="file" name="storeimg1" id="a_picture_image" />-->
+            <!--<input type="hidden"  name="storeimg1"  class="Business_License_url" id="picture" value="" />-->
+            <!--<img  id="picture_look" src="{$vo.pic}" width="50%" />-->
+            <!--&lt;!&ndash;<input type="file" name="storeimg2" id="a_picture_image1" />&ndash;&gt;-->
+            <!--&lt;!&ndash;<input type="hidden"  name="storeimg2"  class="Business_License_url" id="picture1" value="" />&ndash;&gt;-->
+            <!--&lt;!&ndash;<img  id="picture_look1" src="{$vo.storeimg2}" width="50%" />&ndash;&gt;-->
+            <!--&lt;!&ndash;<input type="file" name="storeimg3" id="a_picture_image2" />&ndash;&gt;-->
+            <!--&lt;!&ndash;<input type="hidden"  name="storeimg3"  class="Business_License_url" id="picture2" value="" />&ndash;&gt;-->
+            <!--&lt;!&ndash;<img  id="picture_look2" src="{$vo.storeimg3}" width="50%" />&ndash;&gt;-->
+        <!--</div>-->
+        <!--用户头像-->
+        <div class="picmsg">
+            <div>上传图片</div>
+            <input type="file" name="sec_head" id="a_picture_image" />
+            <input type="hidden"  name="sec_head"  class="Business_License_url" id="picture" value="人物头像" />
+            <img  id="picture_look" src="{$vo.sec_head}" width="50%" />
+
+
+
+            <input type="file" name="storeimg1" id="a_picture_image1" />
+            <input type="hidden"  name="storeimg1"  class="Business_License_url" id="picture1" value="" />
+            <img  id="picture_look1" src="{$vo.storeimg1}" width="50%" />
+
+
+
+            <input type="file" name="storeimg2" id="a_picture_image2" />
+            <input type="hidden"  name="storeimg2"  class="Business_License_url" id="picture2" value="" />
+            <img  id="picture_look2" src="{$vo.storeimg2}" width="50%" />
+
+
+            <input type="file" name="storeimg3" id="a_picture_image3" />
+            <input type="hidden"  name="storeimg3"  class="Business_License_url" id="picture3" value="" />
+            <img  id="picture_look3" src="{$vo.storeimg3}" width="50%" />
+
+        </div>
+        <!--这里是编辑器添加内容-->
+        <div class="form-item">
+            <label class="item-label">添加简介：</label>
+            <tr><td><textarea id="editor_id"    name="sec_intro" style="width:1500px;height:600px;"></textarea></td></tr>
+        </div>
+
+
+        <div class="form-item" style="margin-top:50px" >
+            <button class="btn submit-btn " id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+
+    <script type="text/javascript">
+
+        /* 初始化上传头像插件 */
+        $("#a_picture_image").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "上传头像图片",
+            "uploader"        : "/index.php?s=/Admin/Weixiu/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look").attr("src",data);
+            $("#picture").val(data);
+            $("#picture_look").css('width','100px');
+        }
+        </script>
+        <script type="text/javascript">
+        /* 初始化上传第一张图片插件 */
+        $("#a_picture_image1").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "上传第一张小图片",
+            "uploader"        : "/index.php?s=/Admin/Weixiu/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look1").attr("src",data);
+            $("#picture1").val(data);
+            $("#picture_look1").css('width','100px');
+        }
+        </script>
+    <script type="text/javascript">
+        /* 初始化上传第二张图片插件 */
+        $("#a_picture_image2").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "上传第二张小图片",
+            "uploader"        : "/index.php?s=/Admin/Weixiu/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look2").attr("src",data);
+            $("#picture2").val(data);
+            $("#picture_look2").css('width','100px');
+        }
+    </script>
+    <script type="text/javascript">
+        /* 初始化上传第三张图片插件 */
+        $("#a_picture_image3").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "上传第三张小图片",
+            "uploader"        : "/index.php?s=/Admin/Weixiu/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look3").attr("src",data);
+            $("#picture3").val(data);
+            $("#picture_look3").css('width','100px');
+        }
+    </script>
+
+
+
+    <script type="text/javascript" language="javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            //高亮当前选中的导航
+            var myNav = $(".side-nav a");
+            for (var i = 0; i < myNav.length; i++) {
+                var links = myNav.eq(i).attr("href");
+                var myURL = document.URL;
+                var durl=/http:\/\/([^\/]+)\//i;
+                domain = myURL.match(durl);
+                console.log(myURL.match(durl));
+                var result = myURL.replace("http://"+domain[1],"");
+                if (links == result) {
+                    myNav.eq(i).parents(".dropdown").addClass("curr");
+                }
+            }
+        });
+    </script>
+
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Book/index')}');
+    </script>
+</block>

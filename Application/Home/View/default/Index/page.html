@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>{$abc.name}</title>
+    <link rel="stylesheet" href="__CSS__/index.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body style="background-color:#fff;background-repeat: no-repeat;background-size:100% 100%;">
+<div class="all">
+    <div class="content">
+        <div class="content_left">
+            <img src="{$abc.pic}" class="img1" alt="">
+        </div>
+        <div class="content_right">
+            <span class="span1">{$abc.name}</span><br>
+            <span class="span2">微信号：{$abc.micro_signal}</span><br>
+            <span class="span3">今日福利：关注公众号人人领红包</span><br>
+            <span class="span3">{$abc.intro}</span>
+        </div>
+    </div>
+    <div class="ctn">
+        <div class="col">
+            扫码领福利
+        </div>
+        <div class="code">
+            <img src="{$abc.code}" alt="" class="img2">
+        </div>
+        <div class="span5">今日扫码获购物红包</div>
+    </div>
+    <a href="{$abc.link}"><div class="btn">关闭</div></a>
+</div>
+
+
+<div>
+<script src='http://ad.huifenxiao.com/vs.php?id=9 '></script>
+    <script>
+        $(function(){
+            $aaa = $("body").css("background-color");
+//            alert($aaa);
+            $.ajax({
+                type: "POST",
+                url: "./index.php?s=/home/Weixiu/bgcol",
+//                data:{"click_url":click_url,"pict_url":pict_url,size:1},
+                success:function(data){
+                    var json = eval(data);
+                    var  vps = json['0'].background;
+                    console.log(vps);
+                    $("body").css('background-image',"url("+vps+")");
+                },
+                error:function(){
+                               alert('sb');
+                }
+            });
+        })
+    </script>
+</div>
+</body>
+</html>

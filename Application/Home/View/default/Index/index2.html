@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>首页</title>
+    <!--<link rel="stylesheet" href="./css/swiper.css">-->
+    <link rel="stylesheet" href="__CSS__/index.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/lrtk.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+
+    <style>
+
+        .slide{
+         background-size: 100% 100%;
+            max-width:750px;
+            margin: 0 auto !important;
+        }
+        .slideshow{
+            width:100%;
+        }
+        .slideshow img{
+            background-size:100% 100%;
+         }
+    </style>
+</head>
+<body style="position: relative;margin:0 auto;">
+<div class="footer">
+    <ul class="index_footer">
+        <li class="index_foot_tb oli1">
+            <a href="#">
+                <img src="__IMG__/index_logred.png" class="img5 btn1" alt="">
+                <span class="span3 pt1">首页</span>
+            </a>
+        </li>
+        <li class="index_foot_tb oli2">
+            <a href="#">
+                <img src="__IMG__/index_minegay.png" class="img6 btn2" alt="">
+                <span class="span5 pt2">我的</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="all">
+    <div class="nav">微秀</div>
+    <!--测试轮播图-->
+
+    <!--<div class="index_banner">-->
+        <!--<img src="__IMG__/0001.jpg" alt="">-->
+    <!--</div>-->
+<div class="banner">
+
+    <div class="container-fluid text-center"  style="width: 100%;
+    height: 240px;
+    max-width: 750px;
+    min-width: 320px;
+    display: block;">
+        <div class="header" style="width:100%;">
+            <img src="__IMG__/0001.jpg"  class="headerImg"  data-slideshow='__IMG__/0002.jpg|__IMG__/0003.jpg|__IMG__/0004.jpg'  style="width:100%;" alt="">
+
+        </div>
+    </div>
+    <!--<script src="js/jquery.min.js"></script>-->
+    <script src="__JS__/jquery.hammer-full.min.js"></script>
+    <script src="__JS__/plugin.js"> </script>
+    <script src="__JS__/lrtk.js"></script>
+    <script>
+        var links = ["http://www.lanrentuku.com", "http://www.lanrentuku.com/lanren/", "http://www.lanrentuku.com/js/biaoqian.html", "http://www.lanrentuku.com/js/xiangce.html"];
+        $(".slide").click(function(){
+            var index = $(this).attr('index');
+            if(index === undefined) {
+                window.open(links[0]);
+            } else {
+                window.open(links[(parseInt(index)+1)]);
+            }
+
+        });
+    </script>
+
+</div>
+
+
+
+
+     <!--轮播图结束-->
+    <div class="index_ban">
+        <img src="__IMG__/top_paihang.jpg" class="img1" alt="">
+    </div>
+    <ul class="index_listap">
+        <li>
+            <img src="__IMG__/yonghu_01.jpg" alt="" class="img2">
+            <a href="">
+                <div class="index_list_con">
+                    <div class="index_list_con_tp">
+                        <div class="span2">王一然Sindy</div>
+                        <div class="index_xss">
+                            认识她
+                        </div>
+                    </div>
+                    <div class="index_list_con_btm">
+                        上海福泽文化传播有限公司 Hat Designer 『Chiquitita琪琪缇塔』品牌创始人、设计师
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <img src="__IMG__/yonghu_02.jpg" alt="" class="img2">
+            <a href="">
+                <div class="index_list_con">
+                    <div class="index_list_con_tp">
+                        <div class="span2">淡青淡紫</div>
+                        <div class="index_xss">
+                            认识她
+                        </div>
+                    </div>
+                    <div class="index_list_con_btm">
+                        我是淡紫淡青的新号，我店铺名就叫淡紫淡青！我是个卖外贸衣服的，就酱！
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <img src="__IMG__/yonghu_03.jpg" alt="" class="img2">
+            <a href="">
+                <div class="index_list_con">
+                    <div class="index_list_con_tp">
+                        <div class="span2">朴瑟seul</div>
+                        <div class="index_xss">
+                            认识她
+                        </div>
+                    </div>
+                    <div class="index_list_con_btm">
+                        韩国模特朴瑟，喜欢中国的韩国人。希望和你们分享一切美好的穿搭、美食，还有我家的画儿
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div class="index_line"></div>
+
+    <div class="index_descp">
+        <div class="index_descp_cr">
+            <p class="p1">认识更多的达人</p>
+            <span class="span2">已收录11506位达人，今日新增530位</span>
+        </div>
+    </div>
+    <div class="index_dem">
+        <ul class="index_oul1">
+            <li>
+            <div class="index_opic">
+                <img src="__IMG__/daren_ico_01.jpg" alt="">
+            </div>
+            <div class="index_sz">美妆</div>
+        </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/daren_ico_02.jpg" alt="">
+                </div>
+                <div class="index_sz">美食</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/daren_ico_03.jpg" alt="">
+                </div>
+                <div class="index_sz">生活</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/daren_ico_04.jpg" alt="">
+                </div>
+                <div class="index_sz">旅行</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/daren_ico_05.jpg" alt="">
+                </div>
+                <div class="index_sz">交友</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/daren_ico_06.jpg" alt="">
+                </div>
+                <div class="index_sz">时尚</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="index_line"></div>
+    <div class="index_gd">
+        <div class="index_gd_sz">
+            <img src="__IMG__/gonggao_ico.png" alt="">
+            <div class="index_gd_mm">
+                复古波点，咖啡色平底鞋，我爱一切复古风
+                有一种美丽与鞋有关，帆布鞋，高跟鞋
+            </div>
+            <img src="__IMG__/gonggao1_ico.png" alt="" class="index_gd_st">
+        </div>
+        <div class="index_oline"></div>
+        <div class="index_gd_btm">
+            <div class="index_gd_btm_left">我是达人，我想上榜</div>
+            <div class="index_gd_btm_right">提交资料</div>
+        </div>
+    </div>
+    <div class="index_line">
+    </div>
+    <div class="index_store">
+        <p class="p2">好店推荐</p>
+        <span class="span1">4月16日 &nbsp;|&nbsp; 今天为您推荐85家好店</span>
+    </div>
+    <div class="index_instr">
+        <div class="index_instr_tp">
+            <img src="__IMG__/touxiang_01.jpg" alt="">
+            <span class="span3">止夕ZENVL</span>
+        </div>
+        <div class="index_instr_btm">
+            从海外直邮到手的少女品牌，甜美学院风，青春气息爆棚啊！
+        </div>
+    </div>
+    <ul class="index_list_yf">
+        <li>
+            <img src="__IMG__/daren_tu_01.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_02.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_03.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_04.jpg" alt="">
+        </li>
+    </ul>
+
+    <div class="index_instr">
+        <div class="index_instr_tp">
+            <img src="__IMG__/touxiang_02.jpg" alt="">
+            <span class="span3">simple ammjoo</span>
+        </div>
+        <div class="index_instr_btm">
+            simple ammjoo 好品味的店主amm带来好品质的衣物以及一些日常爱用品。
+        </div>
+    </div>
+    <ul class="index_list_yf">
+        <li>
+            <img src="__IMG__/daren_tu_05.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_06.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_07.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_08.jpg" alt="">
+        </li>
+    </ul>
+
+    <div class="index_instr">
+        <div class="index_instr_tp">
+            <img src="__IMG__/touxiang_03.jpg" alt="">
+            <span class="span3">呈现Emerge</span>
+        </div>
+        <div class="index_instr_btm">
+            可爱的青春少女系列韩国代购店，还有男装哦。
+        </div>
+    </div>
+    <ul class="index_list_yf">
+        <li>
+            <img src="__IMG__/daren_tu_09.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_10.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_11.jpg" alt="">
+        </li>
+        <li>
+            <img src="__IMG__/daren_tu_12.jpg" alt="">
+        </li>
+    </ul>
+    <div class="index_line"></div>
+    <div class="index_descp">
+        <div class="index_descp_cr">
+            <p class="p1">更多好店......</p>
+            <span class="span2">已收录11506家好店，今日新增10家店铺</span>
+        </div>
+    </div>
+    <div class="index_dem">
+        <ul class="index_oul1">
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/haodian_ico_01.jpg" alt="">
+                </div>
+                <div class="index_sz">美妆</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/haodian_ico_02.jpg" alt="">
+                </div>
+                <div class="index_sz">美食</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/haodian_ico_03.jpg" alt="">
+                </div>
+                <div class="index_sz">生活</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/haodian_ico_04.jpg" alt="">
+                </div>
+                <div class="index_sz">旅行</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/haodian_ico_05.jpg" alt="">
+                </div>
+                <div class="index_sz">交友</div>
+            </li>
+            <li>
+                <div class="index_opic">
+                    <img src="__IMG__/haodian_ico_06.jpg" alt="">
+                </div>
+                <div class="index_sz">时尚</div>
+            </li>
+        </ul>
+    </div>
+    <div class="index_line"></div>
+    <div class="index_xmmp">
+        <div class="index_welfare">今日福利</div>
+        <volist name="abc" id="vo">
+            <a href="index.php?s=/Home/weixiu/content">
+            <div class="index_list1">
+                <div class="index_list1_left">
+                    <div class="p1">{$vo.title}</div>
+                    <div class="span2">{$vo.intro}</div>
+                </div>
+                <div class="index_list1_right">
+                    <img src="{$vo.pic}" alt="">
+                </div>
+            </div>
+            </a>
+        </volist>
+
+    </div>
+    <div class="index_line"></div>
+
+    <script>
+        $(function(){
+        $('.oli1').click(function(){
+        $('.btn1').attr('src','__IMG__/index_logred.png');
+        $('.btn2').attr('src','__IMG__/index_minegay.png');
+        $('.pt1').css("color","#ee795a");
+        $('.pt2').css("color","#656565");
+        })
+        $('.oli2').click(function(){
+        $('.btn1').attr('src','__IMG__/index_logogray.png');
+        $('.btn2').attr('src','__IMG__/index_minered.png');
+        $('.pt1').css("color","#656565");
+        $('.pt2').css("color","#ee795a");
+        })
+        })
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <style>
+        .radio{
+            width:100px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+    <script charset="utf-8" src="Public/static/kindeditor_new/kindeditor-all.js"></script>
+    <script charset="utf-8" src="Public/static/kindeditor_new/lang/zh-CN.js"></script>
+
+    <script>
+        KindEditor.ready(function(K) {
+            window.editor = K.create('#editor_id');
+        });
+    </script>
+
+    <div class="main-title">
+        <h2>编辑内容</h2>
+    </div>
+    <form action="{:U(edit_index)}" method="post" class="form-horizontal" onsubmit="return check()" >
+        <input type="hidden" name="id" value="{$vo.id}">
+        <div class="form-item">
+            <label class="item-label">名称<span class="check-tips">（请输入网站名称）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="name" value="{$vo.name}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">简介<span class="check-tips">（请输入该网站简介）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="intro" value="{$vo.intro}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">微信号<span class="check-tips">（请输入微信号）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="micro_signal" value="{$vo.micro_signal}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">推广链接<span class="check-tips">（[链接必须带http头]如：https://www.baidu.com）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="wake_link" value="{$vo.wake_link}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">uc限制量<span class="check-tips">（请输入UV访客量最大值）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="limit_uv" value="{$vo.limit_uv}">
+            </div>
+        </div>
+
+        <!--<div class="form-item">-->
+            <!--<label class="item-label">添加简介：</label>-->
+            <!--<tr><td><textarea id="editor_id"    name="sec_intro" style="width:1500px;height:600px;">{$vo.sec_intro}</textarea></td></tr>-->
+        <!--</div>-->
+        <div class="picmsg">
+            <input type="file" name="pic" id="a_picture_image" />
+            <input type="hidden"  name="pic"  class="Business_License_url" id="picture" value="{$vo.pic}" />
+            <img  id="picture_look" src="{$vo.pic}" width="50px" />
+
+
+            <input type="file" name="code" id="a_picture_image1" />
+            <input type="hidden"  name="code"  class="Business_License_url" id="picture1" value="{$vo.code}" />
+            <img  id="picture_look1" src="{$vo.code}" width="100px" />
+
+<!--            <input type="file" name="wake_link" id="a_picture_image2" />
+            <input type="hidden"  name="wake_link"  class="Business_License_url" id="picture2" value="{$vo.wake_link}" />
+            <img  id="picture_look2" src="{$vo.wake_link}" width="100px" />-->
+
+            <div class="form-item" style="margin-top:50px" >
+                <button class="btn submit-btn " id="submit" type="submit" target-form="form-horizontal">确 定</button>
+                <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+
+    <script type="text/javascript">
+
+        /* 初始化上传头像插件 */
+        $("#a_picture_image").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "上传头像图片",
+            "uploader"        : "/index.php?s=/Admin/Baihui/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look").attr("src",data);
+            $("#picture").val(data);
+            $("#picture_look").css('width','100px');
+        }
+    </script>
+    <script type="text/javascript">
+        /* 初始化上传第一张图片插件 */
+        $("#a_picture_image1").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "上传二维码图片",
+            "uploader"        : "/index.php?s=/Admin/Weixiu/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look1").attr("src",data);
+            $("#picture1").val(data);
+            $("#picture_look1").css('width','100px');
+        }
+    </script>
+
+<!--    <script type="text/javascript">
+        /* 初始化上传第一张图片插件 */
+        $("#a_picture_image2").uploadify({
+            "height"          : 30,
+//            formData : {'session_id' : sid},
+            "swf"             : "__STATIC__/uploadify/uploadify.swf",
+            "fileObjName"     : "download",
+            "buttonText"      : "唤醒图片(png)",
+            "uploader"        : "/index.php?s=/Admin/Weixiu/pic",
+            "width"           : 120,
+            'removeTimeout'	  : 1,
+            "onUploadSuccess" : uploadFile,
+            'onFallback' : function() {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+        function uploadFile(file, data){
+            $("#picture_look2").attr("src",data);
+            $("#picture2").val(data);
+            $("#picture_look2").css('width','100px');
+        }
+    </script>-->
+
+
+
+    <script type="text/javascript" language="javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+    <script>
+        function check(){
+//                 var obj = document.getElementsByClassName("language");
+//                    for(var i=0; i<obj.length; i ++){
+//                        if(obj[i].checked){
+//                           var auth_id= obj[i].value;
+//                        }
+//                    }
+//                    if(!auth_id){
+//                        alert('请选择语言！');
+//                        return false;
+//                    }
+            //请选择分类
+//                    var menu1=$('#menu1').val();
+//                    if( !menu1  ){
+//                        alert('请选择左边菜单再选择下级类目!');
+//                        return false;
+//                    }
+            //请选择分类2
+//                    var menu2=$('#menu2').val();
+//                    if( !menu2  ){
+//                        alert('请选择分类2！');
+//                        return false;
+//                    }
+            //请填写书名
+//                    var bookName=$('#channel').val();
+//                    if( !bookName  ){
+//                        alert('请填语言！');
+//                        return false;
+//                    }
+        }
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+            //高亮当前选中的导航
+            var myNav = $(".side-nav a");
+            for (var i = 0; i < myNav.length; i++) {
+                var links = myNav.eq(i).attr("href");
+                var myURL = document.URL;
+                var durl=/http:\/\/([^\/]+)\//i;
+                domain = myURL.match(durl);
+                console.log(myURL.match(durl));
+                var result = myURL.replace("http://"+domain[1],"");
+                if (links == result) {
+                    myNav.eq(i).parents(".dropdown").addClass("curr");
+                }
+            }
+        });
+    </script>
+
+
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Book/index')}');
+    </script>
+</block>

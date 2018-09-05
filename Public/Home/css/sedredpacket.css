@@ -1,0 +1,418 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+button,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  background: transparent;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+button {
+  background: transparent;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+strong {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border: 0;
+  max-width: 100%;
+}
+html {
+  line-height: initial;
+}
+body {
+  font-size: 0.32rem;
+  max-width: 7.5rem;
+  min-width: 3.2rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  font-family: Microsoft YaHei, arial, helvetica, sans-serif;
+}
+.clear {
+  clear: both;
+}
+.all {
+  max-width: 7.5rem;
+  min-width: 3.2rem;
+  overflow: hidden;
+  height: 100%;
+  margin: 0 auto;
+}
+.all .sky {
+  width: 100%;
+  height: 0.88rem;
+  background: url("../images/sed_red_nav.png") no-repeat;
+  background-size: 100% 100%;
+}
+.all .sky .nav {
+  width: 92%;
+  height: 0.88rem;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 0.88rem;
+  color: #fff;
+  font-size: 0.36rem;
+}
+.all .sky .nav .nav_img {
+  width: 0.24rem;
+  height: 0.4rem;
+  position: absolute;
+  left: 0px;
+  top: 0.24rem;
+}
+.all .sky .nav .span1 {
+  position: absolute;
+  right: 0px;
+  top: 0.3rem;
+  width: 0.6rem;
+  height: 0.3rem;
+  color: #fff;
+  line-height: 0.3rem;
+  font-size: 0.3rem;
+}
+.all .sed_red_txt {
+  width: 92%;
+  height: 3rem;
+  border-bottom: 1px solid #d2d2d2;
+  margin: 0 auto 0.3rem;
+}
+.all .sed_red_txt textarea {
+  width: 92%;
+  height: 1.26rem;
+  margin: 1px auto 0px;
+  color: #A3A3A3;
+  font-size: 0.32rem;
+  background: inherit;
+  border: none;
+}
+.all .sed_red_txt .odiv1{
+  width: 1.64rem;
+  height: 1.4rem;
+  position:relative;
+}
+.all .sed_red_txt .odiv1 .input1 {
+  /*background: url("../images/add-picture.png") no-repeat;*/
+  width: 1.64rem;
+  height: 1.4rem;
+  z-index: -11111;
+  float: left;
+  background-size: 100% 100%;
+  opacity: 0;
+}
+.all .sed_red_txt .img6{
+  /*background: url("../images/add-picture.png") no-repeat;*/
+  width: 1.64rem;
+  height: 1.4rem;
+  float: left;
+  position:absolute;
+  left:0px;
+  top:0px;
+  z-index: 999999;
+  opacity: 1 !important;
+  background-size: 100% 100%;
+}
+
+.all .sed_red_txt input[type="file"] {
+  color: transparent;
+}
+.all .sed_red_name {
+  width: 92%;
+  height: 1rem;
+  margin: 0 auto;
+  background: #fff;
+}
+.all .sed_red_name .sed_red_name_left {
+  width: 22%;
+  height: 1rem;
+  color: #333;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.3rem;
+  float: left;
+}
+.all .sed_red_name .sed_red_name_right {
+  width: 70%;
+  height: 1rem;
+  float: left;
+}
+.all .sed_red_name .sed_red_name_right .input2 {
+  width: 100%;
+  height: 1rem;
+  text-indent: 0.3rem;
+  color: #A3A3A3;
+  outline: none;
+  font-size: 0.3rem;
+  border: none;
+  text-align: right;
+  background: #fff;
+}
+.all .sed_red_name .sed_red_xs {
+  width: 8%;
+  height: 1rem;
+  text-align: center;
+  line-height: 0.98rem;
+  color: #333333;
+  float: right;
+}
+.all .sed_red_name .smt {
+  background: url("../images/triangle.png") no-repeat;
+  background-position: center center;
+  background-size:.21rem .15rem;
+}
+.all .sed_red_name .skt {
+  background: url("../images/arrow_right.png") no-repeat;
+  background-position: center center;
+  background-size:.18rem .28rem;
+}
+.all .mscon {
+  margin-bottom: 0.26rem;
+}
+.all .base_span {
+  width: 92%;
+  height: 0.26rem;
+  line-height: 0.24rem;
+  color: #898989;
+  font-size: 0.24rem;
+  margin: 0.08rem auto 0.36rem;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+.all .sed_red_radio {
+  width: 92%;
+  height: 0.3rem;
+  margin: 0 auto 0.5rem;
+}
+.all .sed_red_radio .oinput2 {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #ff6000;
+  vertical-align: middle;
+}
+.all .sed_red_radio .span2 {
+  color: #333;
+  font-size: 0.28rem;
+  vertical-align: middle;
+}
+.all .sed_red_radio .span3 {
+  color: #898989;
+  font-size: 0.28rem;
+}
+.all .sed_red_btn {
+  width: 69%;
+  height: 0.96rem;
+  margin: 0.72rem auto 1rem;
+}
+.all .sed_red_btn .img1 {
+  width: 100%;
+  height: 0.96rem;
+  overflow: hidden;
+}
+.layui-layer-content {
+  width: 100%;
+  height: 3.1rem !important;
+  overflow: hidden;
+}
+.layui-layer-content .layer_people {
+  width: 100%;
+  height: 3.1rem;
+  overflow: hidden;
+}
+.layui-layer-content .layer_people .sed_oul1 {
+  width: 100%;
+  height: 3.1rem;
+  overflow: hidden;
+}
+.layui-layer-content .layer_people .sed_oul1 li {
+  width: 100%;
+  height: 1.03rem;
+  color: #111111;
+  font-size: 0.34rem;
+  border-bottom: 1px solid #E5E5E5;
+  text-align: center;
+  line-height: 1.03rem;
+}
+.layui-layer-content .layer_odiv {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 0.24rem;
+}
+.layui-layer-content .layer_odiv .spt {
+  width: 4.44rem;
+  height: 0.76rem;
+  margin: 0 auto;
+  position: relative;
+}
+.layui-layer-content .layer_odiv .spt .input1 {
+  width: 4.44rem;
+  height: 0.76rem;
+  background: #f0f0f0;
+  font-size: 0.26rem;
+  color: #989898;
+  border-radius: 0.35rem;
+  text-indent: 0.16rem;
+  border: 0px;
+  outline: none;
+}
+.layui-layer-content .layer_odiv .spt .span1 {
+  font-size: 0.28rem;
+  color: #333;
+  width: 0.60rem;
+  height: 0.28rem;
+  line-height: 0.28rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.24rem;
+}
+.layui-layer-content .layer_odiv .sed_oul {
+  width: 81.52173913%;
+  height: 1.45rem;
+  margin: 0.42rem auto 0px;
+}
+.layui-layer-content .layer_odiv .sed_oul li {
+  width: 29%;
+  height: 0.48rem;
+  background: #BABABA;
+  line-height: 0.48rem;
+  color: #fff;
+  font-size: 0.26rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  float: left;
+  margin-right: 6.5%;
+  margin-bottom: 0.38rem;
+}
+.layui-layer-content .layer_odiv .sed_oul li:nth-child(3n) {
+  margin-right: 0px;
+}
+.layui-layer-content .layer_odiv .sed_oul li:nth-child(4),
+.layui-layer-content .layer_odiv .sed_oul li:nth-child(5),
+.layui-layer-content .layer_odiv .sed_oul li:nth-child(6) {
+  margin-bottom: 0px;
+}
+.layui-layer-btn .layui-layer-btn0 {
+  background-image: url("../images/confirm.png");
+  width: 81.5%;
+  height: 0.6rem;
+  border-color: #fff !important;
+  background-color: #fff !important;
+  background-size: 100% 100%;
+}

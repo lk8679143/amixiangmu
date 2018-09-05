@@ -1,0 +1,79 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <div class="main-title">
+        <h2>微秀内容页列表</h2>
+    </div>
+    <style>
+        table  tr  td{text-align:center;}
+        table  tr  th{text-align:center !important;}
+    </style>
+
+    <div class="cf">
+        <a class="btn" href="{:U('add_ocontent')}">新 增</a>
+    </div>
+    <div class="data-table table-striped">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户头像</th>
+                <th>图片1</th>
+                <th>图片2</th>
+                <th>图片3</th>
+                <th>标题</th>
+                <th>简介</th>
+                <th>上传时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="abc1">
+                <volist name="abc1" id="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td><img src="{$vo.sec_head}" alt="" style="width:100px;height:100px;"></td>
+                        <td><img src="{$vo.storeimg1}" alt="" style="width:100px;height:100px;"></td>
+                        <td><img src="{$vo.storeimg2}" alt="" style="width:100px;height:100px;"></td>
+                        <td><img src="{$vo.storeimg3}" alt="" style="width:100px;height:100px;"></td>
+                        <td>{$vo.sec_title}</td>
+                        <td>{$vo.sec_intro}</td>
+                        <td>{$vo['sec_ctime'] | date="Y-m-d H:i:s",###}</td>
+                        <td>
+                            <a class="btn"  title="编辑" href="{:U('edit_ocontent?id='.$vo['id'])}">编辑</a>
+                            <a class="confirm ajax-get btn" title="删除" href="{:U('del_ocontent?id='.$vo['id'])}">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="6" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            //点击排序
+            $('.list_sort').click(function(){
+                var url = $(this).attr('url');
+                var ids = $('.ids:checked');
+                var param = '';
+                if(ids.length > 0){
+                    var str = new Array();
+                    ids.each(function(){
+                        str.push($(this).val());
+                    });
+                    param = str.join(',');
+                }
+
+                if(url != undefined && url != ''){
+                    window.location.href = url + '/ids/' + param;
+                }
+            });
+        });
+    </script>
+</block>
